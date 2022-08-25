@@ -1,6 +1,14 @@
 'use strict';
 import $ from 'jquery';
 
+//globalThis...Node.js において実行環境のグローバルオブジェクトを参照するための変数
+/* 
+  この処理ではグローバルオブジェクトの jQuery というプロパティにjQuery を代入している。 
+  これにより BootstrapがjQueryを利用できるようになる。 
+*/
+globalThis.jQuery = $;
+import bootstrap from 'bootstrap';
+
 $('.availability-toggle-button').each((i, e) => {
   const button = $(e);
   button.on('click', () => {
